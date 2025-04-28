@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
-import "./Dashboard.css";
+import "./Dashboardd.css";
 import axios from "axios";
 import { Spin, Skeleton, Modal } from "antd";
 import { LoadingOutlined } from "@ant-design/icons";
-import { motion } from "framer-motion";
+
 // import hdrs from "../../assets/ChatGPT Image Apr 8, 2025, 11_50_23 PM.png";
 
 const Dashboard = () => {
@@ -78,25 +78,18 @@ const Dashboard = () => {
             </div>
           </div>
           <div className="mid_content">
-            <motion.h1
-              initial={{ opacity: 0, y: 40 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              className="mid_heading"
-            >
+            <h1 className="mid_heading fade_up_slow">
               A plate full of flavors, stories and inspiration
-            </motion.h1>
+            </h1>
           </div>
+
           <div className="items_card">
             {responseData?.recipes?.length > 0 &&
               responseData.recipes.map((ele, index) => (
-                <motion.div
+                <div
                   key={ele.id}
-                  className="inner_items"
-                  initial={{ opacity: 0, y: 30 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.4, delay: index * 0.05 }}
-                  whileHover={{ scale: 1.03 }}
+                  className="inner_items fade_up"
+                  style={{ animationDelay: `${index * 0.05}s` }}
                 >
                   <div className="recipe_img_wrapper">
                     {imageLoading[ele.id] ? (
@@ -145,7 +138,7 @@ const Dashboard = () => {
                       View Recipe
                     </button>
                   </div>
-                </motion.div>
+                </div>
               ))}
           </div>
           <div className="antd_modal">

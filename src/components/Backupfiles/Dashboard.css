@@ -8,21 +8,50 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  flex-wrap: wrap;
+  padding: 1rem 2rem;
+  background: #fff;
+  border-bottom: 1px solid #eee;
 }
 
+/* Logo / Title */
 .hdr_card h3 {
   font-family: "Playfair Display", serif;
   margin: 0;
   font-size: 1.8rem;
-  background: linear-gradient(90deg, #a1ee74, #ff914d, #e32323);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  color: transparent;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.15);
-  font-style: italic;
-  animation: subtleGlow 4s ease-in-out infinite;
+  color: #222;
+  font-weight: 600;
+}
+
+/* Header links */
+.hrd_txt {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.hrd_txt h6 {
+  margin: 0;
+  font-size: 1rem;
+  color: #555;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.hrd_txt h6:hover {
+  color: #ff914d;
+}
+
+/* Middle content */
+.mid_content {
+  padding: 4rem 2rem 2rem 2rem;
+  text-align: center;
+  background: #fff7f0;
+}
+
+.mid_heading {
+  font-size: 2.5rem;
+  color: #333;
+  margin: 0;
+  line-height: 1.4;
 }
 
 .hrd_txt {
@@ -331,5 +360,41 @@
     .modal_list {
       font-size: 14px;
     }
+  }
+}
+
+/* Fade up and appear animation */
+.fade_up {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeUp 0.6s ease forwards;
+}
+
+/* Slight fade up for mid heading */
+.fade_up_slow {
+  opacity: 0;
+  transform: translateY(40px);
+  animation: fadeUpSlow 0.8s ease forwards;
+}
+
+/* Hover effect on card */
+.inner_items:hover {
+  transform: scale(1.03);
+  transition: transform 0.3s ease;
+}
+
+/* Keyframes for fadeUp */
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Keyframes for slow fadeUp */
+@keyframes fadeUpSlow {
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
